@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use DumpsterfireComponents\Container\Container;
+use DumpsterfireBase\Container\Container;
 use Src\TestComponent\TestComponent;
 
 $container = Container::getInstance();
