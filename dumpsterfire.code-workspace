@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "repos/dumpsterfire-components"
+		},
+		{
+			"path": "repos/dumpsterfire-router"
+		}
+	],
+	"settings": {}
+}

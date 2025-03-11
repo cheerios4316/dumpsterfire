@@ -1,0 +1,37 @@
+{
+  "name": "cheerios/dumpsterfire",
+  "autoload": {
+    "psr-4": {
+      "DumpsterfireRouter\\": "./repos/dumpsterfire-router/src/",
+      "DumpsterfireComponents\\": "./repos/dumpsterfire-components/src/"
+    },
+    "classmap": [
+      "src/"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Cheerios4316"
+    }
+  ],
+  "require": {
+    "symfony/var-dumper": "^5",
+    "vlucas/phpdotenv": "^5.6",
+    "filp/whoops": "^2.15"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./repos/dumpsterfire-components",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "./repos/dumpsterfire-router"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
