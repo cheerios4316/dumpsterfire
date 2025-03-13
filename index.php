@@ -3,7 +3,6 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use DumpsterfireBase\Container\Container;
-use DumpsterfireComponents\Renderer\AssetsManager;
 use Src\TestComponent\TestComponent;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
@@ -16,3 +15,5 @@ $container = Container::getInstance();
 
 $container->create(TestComponent::class)->render();
 $container->create(TestComponent::class)->render();
+
+?>
