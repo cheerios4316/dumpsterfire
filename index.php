@@ -3,7 +3,9 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use DumpsterfireBase\Container\Container;
-use Src\TestComponent\TestComponent;
+use DumpsterfireComponents\PageTemplate\PageTemplate;
+use Src\HeaderComponent\HeaderComponent;
+use Src\SomePageComponent\SomePageComponent;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
@@ -13,7 +15,7 @@ $whoops->register();
 
 $container = Container::getInstance();
 
-$container->create(TestComponent::class)->render();
-$container->create(TestComponent::class)->render();
+PageTemplate::setHeader(HeaderComponent::class);
 
-?>
+$page = $container->create(SomePageComponent::class);
+$page->render();

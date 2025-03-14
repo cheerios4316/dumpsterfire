@@ -11,7 +11,7 @@ class TestComponent extends Component implements ISetup
 
     public function setup(): void
     {
-        $this->test = "gugu";
+        $this->test = "this is my test component :DDD";
     }
 
     public function getSomething(): string

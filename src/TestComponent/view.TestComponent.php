@@ -9,5 +9,7 @@ namespace Src\TestComponent;
 ?>
 
 <div class="test-component">
+    <h2>
     <?= $this->getSomething() ?>
+    </h2>
 </div>
