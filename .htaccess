@@ -2,14 +2,17 @@ AddType application/javascript .js
 
 RewriteEngine On
 
-# disable directory listing
+# Disable directory listing
 Options -Indexes
 
-# serve existing files and directories directly
+# Serve existing files and directories directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# ensure all other requests go to index.php
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteRule . /index.php [L,QSA]
+# Allow direct access to public folder
+RewriteCond %{REQUEST_URI} ^/public/ [NC]
+RewriteRule ^ - [L]
+
+# Redirect all other requests to index.php
+RewriteRule ^ index.php [L,QSA]
