@@ -1,6 +1,8 @@
-import {Component} from "../../repos/dumpsterfire-components/src/js/Application";
+import { Component } from "../../repos/dumpsterfire-components/src/js/Component.js";
 export class TestComponent extends Component {
     bindEvents() {
-        console.log('test');
+        console.log(this);
     }
 }
+
+window.TestComponent = TestComponent;;

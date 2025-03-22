@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:all": "npm run build:ts && npm run build:php",
+    "build:ts": "npx tsc && webpack",
+    "build:php": "composer install"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,9 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.32",
-    "typescript": "^5.8.2"
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   }
 }

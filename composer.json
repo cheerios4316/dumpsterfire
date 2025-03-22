@@ -24,18 +24,15 @@
   "repositories": [
     {
       "type": "path",
-      "url": "./repos/dumpsterfire-base",
-      "options": { "symlink": true }
+      "url": "/var/www/html/repos/dumpsterfire-base"
     },
     {
       "type": "path",
-      "url": "./repos/dumpsterfire-components",
-      "options": { "symlink": true }
+      "url": "/var/www/html/repos/dumpsterfire-components"
     },
     {
       "type": "path",
-      "url": "./repos/dumpsterfire-router",
-      "options": { "symlink": true }
+      "url": "/var/www/html/repos/dumpsterfire-router"
     }
   ],
   "minimum-stability": "dev",
