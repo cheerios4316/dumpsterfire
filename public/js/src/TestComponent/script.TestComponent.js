@@ -20,7 +20,7 @@ var TestComponent = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TestComponent.prototype.bindEvents = function () {
-        console.log('test');
+        console.log(this);
     };
     return TestComponent;
 }(Component));

@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:all": "npm run build:ts && npm run build:php",
     "build:ts": "npx tsc && webpack",
-    "build:php": "composer install"
+    "build:php": "composer install",
+    "build:watch": "concurrently \"npx tsc --watch\" \"webpack --watch\"",
+    "build:all:watch": "npm run build:php && npm run build:watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.32",
+    "concurrently": "^9.1.2",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
     "webpack": "^5.98.0",
