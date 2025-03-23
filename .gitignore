@@ -4,3 +4,5 @@
 composer.lock
 /.idea/
 /node_modules/
+/public/dist/
+/public/js/
