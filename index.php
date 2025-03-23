@@ -7,12 +7,15 @@ use DumpsterfireRouter\Router\DumpsterfireRouter;
 use Src\Controllers\SampleController;
 use Src\HeaderComponent\HeaderComponent;
 
+$app = App::new()
+    ->runInitActions();
+
 $router = DumpsterfireRouter::new()
-    ->registerRoute('/sample-path/{id}', SampleController::class)
+    ->registerRoute('sample-path/{id}', SampleController::class)
     ->registerRoute('/', SampleController::class)
 ;
 
-$app = App::new()
+$app
     ->setPageTemplateHeader(HeaderComponent::class)
     ->setRouter($router)
     ->run()
