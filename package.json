@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:all": "npm run build:ts && npm run build:php",
+    "build:all": "npm run build:php && npm run build:ts",
     "build:ts": "npx tsc && webpack",
+    "build:css": "npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css",
+    "build:dev": "npm run build:css && npm run build:ts",
     "build:php": "composer install",
-    "build:watch": "concurrently \"npx tsc --watch\" \"webpack --watch\"",
+    "build:watch": "concurrently \"npx tsc --watch\" \"webpack --watch\" \"npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css --watch\"",
     "build:all:watch": "npm run build:php && npm run build:watch"
   },
   "repository": {
@@ -22,11 +24,16 @@
   },
   "homepage": "https://github.com/cheerios4316/dumpsterfire#readme",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.15",
+    "autoprefixer": "^10.4.21",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.0.15",
     "@types/jquery": "^3.5.32",
     "concurrently": "^9.1.2",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.15",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
     "webpack": "^5.98.0",

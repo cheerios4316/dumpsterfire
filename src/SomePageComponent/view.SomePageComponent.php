@@ -13,5 +13,6 @@ use Src\TestComponent\TestComponent;
 <div class="some-page-component">
     <?php
     Container::getInstance()->create(TestComponent::class)->render();
+    Container::getInstance()->create(TestComponent::class)->render();
     ?>
 </div>

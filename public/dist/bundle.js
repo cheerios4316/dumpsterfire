@@ -19,6 +19,16 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 
 /***/ }),
 
+/***/ "./public/js sync recursive \\.js$":
+/*!*******************************!*\
+  !*** ./public/js/ sync \.js$ ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var map = {\n\t\"./repos/dumpsterfire-components/src/js/Application.js\": \"./public/js/repos/dumpsterfire-components/src/js/Application.js\",\n\t\"./repos/dumpsterfire-components/src/js/Component.js\": \"./public/js/repos/dumpsterfire-components/src/js/Component.js\",\n\t\"./src/TestComponent/script.TestComponent.js\": \"./public/js/src/TestComponent/script.TestComponent.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./public/js sync recursive \\\\.js$\";\n\n//# sourceURL=webpack://dumpsterfire/./public/js/_sync_\\.js$?");
+
+/***/ }),
+
 /***/ "./public/js/repos/dumpsterfire-components/src/js/Application.js":
 /*!***********************************************************************!*\
   !*** ./public/js/repos/dumpsterfire-components/src/js/Application.js ***!
@@ -26,7 +36,29 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction initializeComponents(container) {\n    if (container === void 0) { container = document; }\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(container).find('[class*=\"-component\"]').each(function () {\n        var $element = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);\n        var componentName = getComponentName(this);\n        if (!componentName) {\n            return;\n        }\n        if (!$element.data('initialized') && typeof window[componentName] === 'function') {\n            // @ts-ignore\n            new window[componentName]($element);\n            $element.data('initialized', true);\n        }\n    });\n}\nfunction getComponentName(element) {\n    // @ts-ignore\n    var classname = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).attr('class').split(' ').find(function (e) { return e.endsWith('-component'); });\n    if (!classname) {\n        return null;\n    }\n    // turn html class name 'some-component' into js class name SomeComponent\n    return classname.split('-').map(function (part) { return part.charAt(0).toUpperCase() + part.slice(1); }).join('');\n}\nvar observer = new MutationObserver(function (mutationsList) {\n    for (var _i = 0, mutationsList_1 = mutationsList; _i < mutationsList_1.length; _i++) {\n        var mutation = mutationsList_1[_i];\n        if (mutation.type === 'childList') {\n            mutation.addedNodes.forEach(function (node) {\n                if (node.nodeType === 1) { // element node\n                    initializeComponents();\n                }\n            });\n        }\n    }\n});\n// Initialize components on DOMContentLoaded\ndocument.addEventListener('DOMContentLoaded', function () {\n    observer.observe(document.body, { childList: true, subtree: true });\n    initializeComponents();\n});\n\n\n//# sourceURL=webpack://dumpsterfire/./public/js/repos/dumpsterfire-components/src/js/Application.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\n// @ts-ignore\nvar context = __webpack_require__(\"./public/js sync recursive \\\\.js$\");\ncontext.keys().forEach(context);\nfunction initializeComponents(container) {\n    if (container === void 0) { container = document; }\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(container)\n        .find('[class*=\"-component\"]')\n        .each(function () {\n        var $element = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);\n        var componentName = getComponentName(this);\n        if (!componentName) {\n            return;\n        }\n        if (!$element.data(\"initialized\")) {\n            if (globalThis[componentName]) {\n                new globalThis[componentName]($element);\n                $element.data(\"initialized\", true);\n            }\n        }\n    });\n}\nfunction getComponentName(element) {\n    // @ts-ignore\n    var classname = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element)\n        .attr(\"class\")\n        .split(\" \")\n        .find(function (e) { return e.endsWith(\"-component\"); });\n    if (!classname) {\n        return null;\n    }\n    // turn html class name 'some-component' into js class name SomeComponent\n    return classname\n        .split(\"-\")\n        .map(function (part) { return part.charAt(0).toUpperCase() + part.slice(1); })\n        .join(\"\");\n}\nvar observer = new MutationObserver(function (mutationsList) {\n    for (var _i = 0, mutationsList_1 = mutationsList; _i < mutationsList_1.length; _i++) {\n        var mutation = mutationsList_1[_i];\n        if (mutation.type === \"childList\") {\n            mutation.addedNodes.forEach(function (node) {\n                if (node.nodeType === 1) {\n                    // element node\n                    initializeComponents();\n                }\n            });\n        }\n    }\n});\n// Initialize components on DOMContentLoaded\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    observer.observe(document.body, { childList: true, subtree: true });\n    initializeComponents();\n});\n\n\n//# sourceURL=webpack://dumpsterfire/./public/js/repos/dumpsterfire-components/src/js/Application.js?");
+
+/***/ }),
+
+/***/ "./public/js/repos/dumpsterfire-components/src/js/Component.js":
+/*!*********************************************************************!*\
+  !*** ./public/js/repos/dumpsterfire-components/src/js/Component.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Component: () => (/* binding */ Component)\n/* harmony export */ });\nvar Component = /** @class */ (function () {\n    function Component($element) {\n        this.$element = $element;\n        this.setData();\n        this.setDependencies();\n        this.init();\n    }\n    Component.prototype.init = function () {\n        this.bindEvents();\n        this.$element.data('instance', this);\n    };\n    Component.prototype.setDependencies = function () { };\n    Component.prototype.setData = function () { };\n    Component.prototype.bindEvents = function () { };\n    return Component;\n}());\n\n\n\n//# sourceURL=webpack://dumpsterfire/./public/js/repos/dumpsterfire-components/src/js/Component.js?");
+
+/***/ }),
+
+/***/ "./public/js/src/TestComponent/script.TestComponent.js":
+/*!*************************************************************!*\
+  !*** ./public/js/src/TestComponent/script.TestComponent.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   TestComponent: () => (/* binding */ TestComponent)\n/* harmony export */ });\n/* harmony import */ var _repos_dumpsterfire_components_src_js_Component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../repos/dumpsterfire-components/src/js/Component.js */ \"./public/js/repos/dumpsterfire-components/src/js/Component.js\");\nvar __extends = (undefined && undefined.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        if (typeof b !== \"function\" && b !== null)\n            throw new TypeError(\"Class extends value \" + String(b) + \" is not a constructor or null\");\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\n\nvar TestComponent = /** @class */ (function (_super) {\n    __extends(TestComponent, _super);\n    function TestComponent() {\n        return _super !== null && _super.apply(this, arguments) || this;\n    }\n    TestComponent.prototype.bindEvents = function () {\n    };\n    return TestComponent;\n}(_repos_dumpsterfire_components_src_js_Component_js__WEBPACK_IMPORTED_MODULE_0__.Component));\n\nwindow.TestComponent = TestComponent;\n\n\n//# sourceURL=webpack://dumpsterfire/./public/js/src/TestComponent/script.TestComponent.js?");
 
 /***/ })
 
@@ -101,7 +133,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./public/js/repos/dumpsterfire-components/src/js/Application.js");
 /******/ 	
 /******/ })()

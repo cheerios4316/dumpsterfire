@@ -21,7 +21,7 @@ COPY . .
 
 # Install PHP and JS dependencies
 RUN composer install --no-dev --optimize-autoloader && \
-    npm install --omit=dev
+    npm install
 
 # Expose port 80
 EXPOSE 80

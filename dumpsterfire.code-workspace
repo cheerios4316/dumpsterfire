@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "repos/dumpsterfire-router"
+		},
+		{
+			"path": "repos/dumpsterfire-base"
 		}
 	],
 	"settings": {}
