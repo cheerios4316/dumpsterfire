@@ -2,8 +2,8 @@
 
 namespace Src\TestComponent;
 
-use DumpsterfireComponents\Component;
-use DumpsterfireComponents\Interfaces\ISetup;
+use DumpsterfirePages\Component;
+use DumpsterfirePages\Interfaces\ISetup;
 
 class TestComponent extends Component implements ISetup
 {

@@ -2,7 +2,7 @@
 
 namespace Src\HeaderComponent;
 
-use DumpsterfireComponents\Component;
+use DumpsterfirePages\Component;
 
 class HeaderComponent extends Component
 {

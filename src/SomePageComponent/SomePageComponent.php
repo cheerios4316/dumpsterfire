@@ -2,7 +2,7 @@
 
 namespace Src\SomePageComponent;
 
-use DumpsterfireComponents\PageComponent;
+use DumpsterfirePages\PageComponent;
 
 class SomePageComponent extends PageComponent
 {
