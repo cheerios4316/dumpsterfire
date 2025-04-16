@@ -4,7 +4,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use DumpsterfireBase\App\App;
 use DumpsterfireBase\Container\Container;
-use DumpsterfirePages\Router\DumpsterfirePages;
+use DumpsterfirePages\Router\DumpsterfireRouter;
 use Src\Controllers\SampleController;
 use Src\HeaderComponent\HeaderComponent;
 use Src\Logger\SomeLogger;
@@ -15,12 +15,12 @@ $app = App::new()
     ->setLogger($logger)
     ->runInitActions();
 
-$router = DumpsterfirePages::new()
+$router = DumpsterfireRouter::new()
     ->registerRoute('sample-path/{id}', SampleController::class)
     ->registerRoute('/', SampleController::class)
 ;
 
-$otherRouter = DumpsterfirePages::new()
+$otherRouter = DumpsterfireRouter::new()
     ->registerRoute('other', SampleController::class)
 ;
 
