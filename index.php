@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use DumpsterfireBase\App\App;
-use DumpsterfireBase\Container\Container;
+use DumpsterfirePages\App\App;
+use DumpsterfirePages\Container\Container;
 use DumpsterfirePages\Router\DumpsterfireRouter;
 use Src\Controllers\SampleController;
 use Src\HeaderComponent\HeaderComponent;

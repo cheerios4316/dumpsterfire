@@ -2,7 +2,7 @@
 
 namespace Src\Controllers;
 
-use DumpsterfireBase\Container\Container;
+use DumpsterfirePages\Container\Container;
 use DumpsterfirePages\Controller\BaseController;
 use DumpsterfirePages\Interfaces\ControllerInterface;
 use DumpsterfirePages\Interfaces\IControllerParams;

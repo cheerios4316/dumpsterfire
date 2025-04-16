@@ -2,7 +2,7 @@
 
 namespace Src\Logger;
 
-use DumpsterfireBase\Interfaces\LoggerInterface;
+use DumpsterfirePages\Interfaces\LoggerInterface;
 
 class SomeLogger implements LoggerInterface
 {

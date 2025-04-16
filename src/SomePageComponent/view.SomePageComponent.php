@@ -1,7 +1,7 @@
 <?php
 
 namespace Src\SomePageComponent;
-use DumpsterfireBase\Container\Container;
+use DumpsterfirePages\Container\Container;
 use Src\TestComponent\TestComponent;
 
 /**
