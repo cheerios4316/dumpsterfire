@@ -9,11 +9,15 @@ use Src\Controllers\SampleController;
 use Src\HeaderComponent\HeaderComponent;
 use Src\Logger\SomeLogger;
 
-$logger = Container::getInstance()->create(SomeLogger::class);
+$container = Container::getInstance();
+$logger = $container->create(SomeLogger::class);
+$page404 = $container->create(Some404PageComponent::class);
 
 $app = App::new()
+    ->runInitActions()
     ->setLogger($logger)
-    ->runInitActions();
+    ->set404PageComponent($page404)
+;
 
 $router = DumpsterfireRouter::new()
     ->registerRoute('sample-path/{id}', SampleController::class)

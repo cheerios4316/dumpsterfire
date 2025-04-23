@@ -9,7 +9,7 @@ use DumpsterfirePages\Interfaces\IControllerParams;
 use DumpsterfirePages\PageComponent;
 use Src\SomePageComponent\SomePageComponent;
 
-class SampleController extends BaseController implements ControllerInterface, IControllerParams
+class SampleController extends BaseController implements IControllerParams
 {
     protected ?int $id = null;
     public function getResult(): PageComponent
