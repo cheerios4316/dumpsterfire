@@ -1,7 +1,6 @@
 /vendor/
 /repos/*
 .env
-composer.lock
 /.idea/
 /node_modules/
 /public/dist/

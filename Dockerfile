@@ -20,8 +20,10 @@ WORKDIR /var/www/html
 COPY . .
 
 # Install PHP and JS dependencies
-RUN composer install --no-dev --optimize-autoloader && \
+RUN composer update && \
+    composer install --no-dev --optimize-autoloader && \
     npm install
+
 
 # Expose port 80
 EXPOSE 80
