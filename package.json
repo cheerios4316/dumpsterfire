@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:setup": "composer install && npm install --verbose",
+    "setup": "composer install && npm install --verbose",
     "build:tailwind": "npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css",
-    "build:ts": "npx tsc && webpack",
-    "build:all": "npm run build:tailwind && npm run build:ts",
-    "build:php": "composer install",
-    "build:watch": "concurrently \"npx tsc --watch\" \"webpack --watch\" \"npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css --watch\"",
-    "build:all:watch": "npm run build:php && npm run build:watch"
+    "build:ts": "npx tsc",
+    "build:webpack": "npx webpack",
+    "build:all": "npm run build:tailwind && npm run build:ts && npm run build:webpack",
+    "build:watch": "concurrently \"npx tsc --watch\" \"webpack --watch\" \"npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css --watch\""
   },
   "repository": {
     "type": "git",
