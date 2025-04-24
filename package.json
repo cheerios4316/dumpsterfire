@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:all": "npm run build:php && npm run build:ts",
+    "build:setup": "composer install && npm install --verbose",
+    "build:tailwind": "npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css",
     "build:ts": "npx tsc && webpack",
-    "build:css": "npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css",
-    "build:dev": "npm run build:css && npm run build:ts",
+    "build:all": "npm run build:tailwind && npm run build:ts",
     "build:php": "composer install",
     "build:watch": "concurrently \"npx tsc --watch\" \"webpack --watch\" \"npx tailwindcss -i ./tailwind/init.css -o ./public/dist/tailwind.css --watch\"",
     "build:all:watch": "npm run build:php && npm run build:watch"
@@ -26,7 +26,9 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.15",
     "autoprefixer": "^10.4.21",
-    "jquery": "^3.7.1"
+    "css-loader": "^7.1.2",
+    "jquery": "^3.7.1",
+    "mini-css-extract-plugin": "^2.9.2"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.15",
