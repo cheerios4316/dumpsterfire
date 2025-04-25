@@ -2,12 +2,12 @@ const path = require('path');
 const CssPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development', // Set to 'development' for easier debugging
+  mode: 'development',
   plugins: [new CssPlugin({filename: 'bundle.css'})],
-  entry: './public/js/repos/dumpsterfire-pages/src/js/Application.js',  // Adjust the path to your main file
+  entry: './public/js/repos/dumpsterfire-pages/src/js/Application.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public/dist'), // Adjust output directory
+    path: path.resolve(__dirname, 'public/dist'),
   },
   ignoreWarnings: [
     {
@@ -15,7 +15,7 @@ module.exports = {
     },
   ],
   resolve: {
-    extensions: ['.ts', '.js'], // Handle both .ts and .js files
+    extensions: ['.ts', '.js'],
     alias: {
       '@root': path.resolve(__dirname, '.'),
     },
@@ -23,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,  // Handle TypeScript files
+        test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
