@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-      '@root': path.resolve(__dirname, '.'),
+      '@root': path.resolve(__dirname, './repos/dumpsterfire-pages/src/js'),
     },
   },
   module: {
